@@ -46,8 +46,6 @@ def make_request(payload):
         if RAY_SEARCH_PROXY_URL
         else None
     )
-    print(f"Payload: {payload}")
-    print(f"Proxies: {proxies}")
     response = requests.get(
         "https://www.googleapis.com/customsearch/v1",
         params=payload,
@@ -55,7 +53,7 @@ def make_request(payload):
     )
     if response.status_code != 200:
         raise Exception("Request failed")
-    print(response.json())
+    # print(response.json())
     return response.json()
 
 
